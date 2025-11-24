@@ -1,0 +1,54 @@
+:root{
+  --bg:#f3f6fb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#4f46e5;
+  --danger:#ef4444;
+}
+
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:var(--bg);color:#111}
+
+.app-root{height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 16px;gap:18px}
+.header{text-align:center;margin-bottom:18px}
+.header h1{margin:0;font-size:1.6rem}
+.subtitle{margin:4px 0 0;color:var(--muted);font-size:0.95rem}
+
+.container{width:100%;max-width:760px;background:var(--card);box-shadow:0 6px 18px rgba(16,24,40,0.06);border-radius:12px;padding:18px}
+
+.todo-form{display:flex;gap:10px}
+.todo-input{flex:1;padding:12px 14px;border-radius:8px;border:1px solid #e6e9ef;font-size:1rem}
+.todo-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(79,70,229,0.06)}
+.btn{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:8px;cursor:pointer}
+.btn.small{padding:6px 8px;font-size:0.9rem}
+.btn.add{min-width:76px}
+.btn.danger{background:var(--danger)}
+
+.controls{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.count{color:var(--muted)}
+.actions{display:flex;gap:8px}
+
+.todo-list{list-style:none;padding:0;margin:14px 0 0}
+.todo-item{display:flex;align-items:center;padding:10px 8px;border-radius:8px;border:1px solid #f0f2f5;margin-bottom:10px}
+.todo-item .left{margin-right:12px}
+.todo-item .left input{width:18px;height:18px}
+.todo-item .content{flex:1}
+.todo-item .text{cursor:text}
+.todo-item.done .text{text-decoration:line-through;opacity:0.6}
+.edit-input{width:100%;padding:8px;border-radius:6px;border:1px solid #e6e9ef}
+.right{display:flex;gap:8px;margin-left:12px}
+
+.footer{color:var(--muted);font-size:0.9rem;margin-top:14px}
+
+@media (max-width:600px){
+  .container{padding:14px}
+  .todo-form{flex-direction:column}
+  .btn.add{width:100%}
+  .controls{flex-direction:column;align-items:flex-start;gap:8px}
+  .right{gap:6px}
+}
+
+@media (prefers-reduced-motion: no-preference){
+  .todo-item{transition:transform .12s ease,background .12s ease}
+  .todo-item:hover{transform:translateY(-4px)}
+}
